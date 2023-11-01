@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+    </style>
+    <title>Form</title>
+    <script>
+        function validarFormulario() {
+            var marca = document.forms["registroForm"]["txtMarca"].value;
+            var modelo = document.forms["registroForm"]["txtModelo"].value;
+            var motor = document.forms["registroForm"]["txtMotor"].value;
+            var chasis = document.forms["registroForm"]["txtChasis"].value;
+            var color = document.forms["registroForm"]["txtColor"].value;
+            var peso = document.forms["registroForm"]["txtPeso"].value;
+            var precio = document.forms["registroForm"]["txtPrecio"].value;
+
+            if (marca === "" || modelo === "" || motor === "" || chasis === "" || color === "" || peso === "" || precio === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+
+            // Puedes agregar más validaciones según tus requisitos.
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <!---cabecera-->
+   
+    <!---formulario-->
+    <div class="modal-body modal-dialog">
+        <div class="container col-lg-11">
+            <div class="modal-content col-lg-9 bg-dark">
+                <!---botones de cambio-->
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!---hasta aqui-->
+                <br>
+                <h1 class="text-center blanco">Registro</h1>
+                <!-----------------------formulario-------------------------------->
+                <form class="table table-success table-striped" name="registroForm" action="registro.php" method="POST" onsubmit="return validarFormulario()">
+                    <div class="mb-3"><br>
+                      <label for="exampleInputEmail1" class="form-label blanco">Marca</label>
+                      <input type="text" class="form-control  bg-light" name="txtMarca" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Modelo</label>
+                        <input type="text" class="form-control bg-light " name="txtModelo" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Motor</label>
+                        <input type="text" class="form-control bg-light " name="txtMotor" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Chasis</label>
+                        <input type="text" class="form-control bg-light " name="txtChasis" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Color</label>
+                        <input type="text" class="form-control bg-light " name="txtColor" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Peso</label>
+                        <input type="text" class="form-control bg-light " name="txtPeso" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label blanco">Precio</label>
+                        <input type="text" class="form-control bg-light " name="txtPrecio" >
+                    </div>
+                    <center>
+                        <div id="emailHelp" class="verde">Verifique los datos proporcionados</div>
+                    </center>
+                    <br>
+                    <center> 
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                    </center>
+                </form><br>
+                <!---hasta aqui form-->
+            </div>
+        </div> 
+    </div>
+    <nav> 
+
+                 
+        <a href="procesar_editar.php">mis datos</a>
+      </nav>
+</body>
+</html>
